@@ -1,32 +1,28 @@
 import requests
-import os
-from dotenv import load_dotenv
+from common_functions import get_image
+import argparse
 
 
-def get_earth_image(path: str):
+def get_earth_image(api_key: str):
     params = {
-        'api_key': os.environ['token_NASA'],
+        'api_key': api_key,
     }
     response = requests.get(url='https://api.nasa.gov/EPIC/api/natural/images', params=params)
     response.raise_for_status()
-
-    if not os.path.exists(path):
-        os.makedirs(path, exist_ok=True)
 
     for ind, photo_info in enumerate(response.json()[:5]):
         year, month, day = photo_info.get('date').split(' ')[0].split('-')
         name = photo_info.get('image')
 
         url_photo = f'https://api.nasa.gov/EPIC/archive/natural/{year}/{month}/{day}/png/{name}.png'
-        response_photo = requests.get(url=url_photo, params=params)
-
-        with open(f'{path}/space_{ind}.png', 'wb') as file:
-            file.write(response_photo.content)
+        get_image(url_photo, 'images', f'space_{ind}', extension='.png', params=params)
 
 
 def main():
-    load_dotenv()
-    get_earth_image('images')
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--key')
+    args = parser.parse_args()
+    get_earth_image(args.key) if args.key else get_earth_image('DEMO_KEY')
 
 
 if __name__ == '__main__':

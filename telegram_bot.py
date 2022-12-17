@@ -5,7 +5,9 @@ import telegram
 
 def send_message():
     bot = telegram.Bot(token=os.environ['bot_token'])
-    bot.send_message(text='Hi', chat_id='@kosmos_img')
+
+    media = telegram.InputMediaDocument(media=open('images/space_APOD_0.jpg', 'rb'))
+    bot.send_media_group(chat_id='@kosmos_img', media=[media])
 
 
 def main():
