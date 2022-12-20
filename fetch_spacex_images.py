@@ -13,7 +13,7 @@ def fetch_spacex_last_launch(launch_param: str):
         return
 
     for ind, url_img in enumerate(url_images):
-        get_image(url_img, 'image', f'space_{ind}', get_extension(url_img))
+        get_image(url_img, 'image', f'spacex_{ind}', get_extension(url_img))
 
 
 def main():
