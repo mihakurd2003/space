@@ -45,4 +45,3 @@ python3 send_photos.py --timeout <кол-во часов>
 python3 send_photo --path <Фотография из images/>
 ```
 - Если не указан --path, публикуется случайное фото из директории images/
-### Цель проекта
