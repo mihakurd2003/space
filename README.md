@@ -26,7 +26,7 @@ pip install -r requirements.txt
 token_NASA=<ваш токен с сайта https://api.nasa.gov/>
 ```
 ```
-id_spacex=5eb87d46ffd86e000604b388
+id_spacex=<id с сайта https://github.com/r-spacex/SpaceX-API>
 ```
 ```
 bot_token=<ваш токен телеграм бота>
@@ -45,3 +45,20 @@ python3 send_photos.py --timeout <кол-во часов>
 python3 send_photo --path <Фотография из images/>
 ```
 - Если не указан --path, публикуется случайное фото из директории images/
+####Чтобы пользоваться следующими скриптами, убедитесь, что файл .env заполнен
+### Как пользоваться файлом fetch_APOD_images.py
+```
+python3 fetch_APOD_images.py --key <ваш токен с сайта https://api.nasa.gov/>
+```
+- Если --key не заполнен, то по умолчанию используется значение из файла .env
+### Как пользоваться файлом fetch_nasa_images.py
+```
+python3 fetch_nasa_images.py --key <ваш токен с сайта https://api.nasa.gov/>
+```
+- Если --key не заполнен, то по умолчанию используется значение из файла .env
+### Как пользоваться файлом fetch_spacex_images.py
+```
+python3 fetch_spacex_images.py --id <id с сайта https://github.com/r-spacex/SpaceX-API>
+```
+- Если --id не заполнен, то по умолчанию используется значение из файла .env
+
