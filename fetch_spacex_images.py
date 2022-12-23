@@ -8,8 +8,7 @@ def fetch_spacex_last_launch(launch_param: str):
     response.raise_for_status()
 
     url_images = response.json()['links']['flickr']['original']
-    if len(url_images) == 0:
-        print('Фоток нет')
+    if not url_images:
         return
 
     for ind, url_img in enumerate(url_images):
@@ -18,9 +17,9 @@ def fetch_spacex_last_launch(launch_param: str):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--id')
+    parser.add_argument('--id', help='id from https://github.com/r-spacex/SpaceX-API', default='latest')
     args = parser.parse_args()
-    fetch_spacex_last_launch(args.id) if args.id else fetch_spacex_last_launch('latest')
+    fetch_spacex_last_launch(args.id)
 
 
 if __name__ == '__main__':

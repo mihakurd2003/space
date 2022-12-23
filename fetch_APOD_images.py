@@ -5,7 +5,7 @@ from common_functions import get_image, get_extension
 from dotenv import load_dotenv
 
 
-def get_image_APOD(api_key: str):
+def get_images_APOD(api_key: str):
     params = {
         'api_key': api_key,
         'count': 10,
@@ -25,9 +25,9 @@ def main():
     load_dotenv()
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--key')
+    parser.add_argument('--key', help='Your token from https://api.nasa.gov/', default=os.environ['token_NASA'])
     args = parser.parse_args()
-    get_image_APOD(args.key) if args.key else get_image_APOD(os.environ['token_NASA'])
+    get_images_APOD(args.key)
 
 
 if __name__ == '__main__':

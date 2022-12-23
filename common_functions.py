@@ -7,8 +7,7 @@ def get_image(url: str, path: str, filename: str, extension='.jpg', params=None)
     response = requests.get(url=url, params=params)
     response.raise_for_status()
 
-    if not os.path.exists(path):
-        os.makedirs(path, exist_ok=True)
+    os.makedirs(path, exist_ok=True)
 
     with open(f'{path}/{filename}{extension}', 'wb') as file:
         file.write(response.content)
