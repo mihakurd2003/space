@@ -23,16 +23,16 @@ pip install -r requirements.txt
 ### Как пользоваться файлом send_photos.py
 - Для начала создайте файл .env в директории проекта, в этом файле создайте переменные:
 ```
-token_NASA=<ваш токен с сайта https://api.nasa.gov/>
+TOKEN_NASA=<ваш токен с сайта https://api.nasa.gov/>
 ```
 ```
-id_spacex=<id с сайта https://github.com/r-spacex/SpaceX-API>
+ID_SPACEX=<id с сайта https://github.com/r-spacex/SpaceX-API>
 ```
 ```
-bot_token=<ваш токен телеграм бота>
+TELEGRAM_BOT_TOKEN=<ваш токен телеграм бота>
 ```
 ```
-publication_frequency=<кол-во времени по умолчанию(в часах)>
+PUBLICATION_FREQUENCY=<кол-во времени по умолчанию(в часах)>
 ```
 - В терминале набирайте команду:
 ```
