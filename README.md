@@ -34,6 +34,9 @@ TELEGRAM_BOT_TOKEN=<ваш токен телеграм бота>
 ```
 PUBLICATION_FREQUENCY=<кол-во времени по умолчанию(в часах)>
 ```
+```
+TELEGRAM_CHAT_ID=<ваш id чата, в котором расположен ваш бот>
+```
 - В терминале набирайте команду:
 ```
 python3 send_photos.py --timeout <кол-во часов>
