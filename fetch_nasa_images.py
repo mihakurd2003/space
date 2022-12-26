@@ -24,7 +24,7 @@ def main():
     load_dotenv()
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--key', help='Your token from https://api.nasa.gov/', default=os.environ['token_NASA'])
+    parser.add_argument('--key', help='Your token from https://api.nasa.gov/', default=os.environ['TOKEN_NASA'])
     args = parser.parse_args()
     get_earth_images(args.key)
 

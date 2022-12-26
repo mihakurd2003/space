@@ -24,11 +24,11 @@ def send_photos(timeout, bot_token, chat_id):
 
 def main():
     load_dotenv()
-    bot_token = os.environ['bot_token']
-    chat_id = os.environ['chat_id']
+    bot_token = os.environ['TELEGRAM_BOT_TOKEN']
+    chat_id = os.environ['TELEGRAM_CHAT_ID']
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--timeout', help='publication frequency in hours', default=os.environ['publication_frequency'])
+    parser.add_argument('--timeout', help='publication frequency in hours', default=os.environ['PUBLICATION_FREQUENCY'])
     args = parser.parse_args()
     send_photos(args.timeout, bot_token, chat_id)
 

@@ -13,8 +13,8 @@ def send_photo(path_photo, bot_token, chat_id):
 
 def main():
     load_dotenv()
-    bot_token = os.environ['bot_token']
-    chat_id = os.environ['chat_id']
+    bot_token = os.environ['TELEGRAM_BOT_TOKEN']
+    chat_id = os.environ['TELEGRAM_CHAT_ID']
     photos = os.listdir('images')
     random.shuffle(photos)
 
